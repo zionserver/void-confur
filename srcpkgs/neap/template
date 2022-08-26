@@ -1,0 +1,7 @@
+# Template file for 'neap'
+pkgname=neap
+version=0.7.2
+short_desc="X11 systray workspace pager"
+homepage="https://github.com/vzxwco/neap"
+distfiles="https://github.com/vzxwco/neap/archive/refs/tags/v0.7.2.tar.gz"
+maintainer="Max Contreras <gudrak@protonmail.com>"
