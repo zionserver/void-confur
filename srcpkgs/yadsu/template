@@ -1,0 +1,27 @@
+# Template file for 'yadsu'
+pkgname=yadsu
+version=0.1
+revision=1
+_commit="44af30594b15896e20e9bdc1942c0d86be622620"
+hostmakedepends="git"
+depends="yad"
+short_desc="Simple gksu replacement using yad"
+maintainer="MarcoAPC <marcoaureliopc@gmail.com>"
+license="MIT"
+homepage="https://git.maboxlinux.org/Mabox/yadsu"
+patch_args="-Np0"
+
+do_fetch() {
+	git clone https://git.maboxlinux.org/Mabox/yadsu ${wrksrc}
+	cd ${wrksrc}
+	git checkout ${_commit}
+}
+
+do_install() {
+	vbin yadsu
+	ln -sf yadsu ${DESTDIR}/usr/bin/gksu
+}
+
+post_install() {
+	vlicense LICENSE
+}
