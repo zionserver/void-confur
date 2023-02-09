@@ -1,0 +1,19 @@
+--- yadsu	2020-09-20 08:34:41.000000000 -0300
++++ yadsu	2021-10-05 22:51:14.073586000 -0300
+@@ -25,7 +25,7 @@
+        CANCEL="--button=Cancel:1"
+        ;;
+ esac
+-PASSWD="$(yad --entry --entry-label "$PASS" --hide-text --image=dialog-password --window-icon=distributor-logo-mabox --width=360 --text="$TEXT" --title="$TITLE" --center $CANCEL $OK)"
++PASSWD="$(yad --entry --entry-label "$PASS" --hide-text --image=dialog-password --window-icon=/usr/share/void-artwork/void-transparent.png --width=360 --text="$TEXT" --title="$TITLE" --center $CANCEL $OK)"
+ 
+ 
+ if [ "$dialog_pressed_label" = 'cancel' ]; then
+@@ -40,6 +40,6 @@
+ fi
+ 
+ if [ $? = 1 ]; then 
+-PASSWD="$(yad --entry --entry-label "$PASS" --hide-text --image=dialog-error --window-icon=distributor-logo-mabox --width=360 --text="$WRONG" --title="$TITLE" --center $CANCEL $OK)"
++PASSWD="$(yad --entry --entry-label "$PASS" --hide-text --image=dialog-error --window-icon=/usr/share/void-artwork/void-transparent.png --width=360 --text="$WRONG" --title="$TITLE" --center $CANCEL $OK)"
+ echo "$PASSWD" | sudo -S "$@"
+ fi
